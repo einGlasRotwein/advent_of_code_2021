@@ -1,0 +1,20 @@
+---
+title: "Advent of Code 2021"
+always_allow_html: true
+output: github_document
+---
+
+```{r setup, include = FALSE}
+source("day02.R")
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+Solving the [advent of code](https://adventofcode.com/) puzzles in R.
+
+Here is a little "radar plot" for the submarine on day 2.
+
+```{r, out.width='90%'}
+radar_plot
+```
+
