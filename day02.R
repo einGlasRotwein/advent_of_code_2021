@@ -1,7 +1,7 @@
 
 library(tidyverse)
 
-day02 <- readLines("input02.txt")
+day02 <- readLines("inputs/input02.txt")
 
 ## PART 1 ##
 # Navigation of the submarine (e.g. "down 2", "forward 1").

@@ -1,5 +1,5 @@
 
-day1 <- as.numeric(readLines("input01.txt"))
+day1 <- as.numeric(readLines("inputs/input01.txt"))
 
 #### PART 1 ####
 # Number of times the measurement increased
