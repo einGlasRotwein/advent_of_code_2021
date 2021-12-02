@@ -104,7 +104,7 @@ commands$cumsum[nrow(commands)] * commands$depth[nrow(commands)]
     theme(
       panel.background = element_rect(fill = NA, colour = NA, size = 1),
       panel.grid.major = element_line(colour = "#00ad2b"),
-      plot.background = element_rect(fill = "#0c1017", colour = NA),
+      plot.background = element_rect(fill = "#0c1017", colour = "#0c1017"),
       strip.background = element_rect(fill = NA, colour = NA),
       strip.text = element_text(size = 16, colour = "#00ad2b"),
       axis.text = element_text(size = 12, colour = "white"),
