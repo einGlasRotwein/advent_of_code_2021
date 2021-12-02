@@ -99,7 +99,7 @@ commands$cumsum[nrow(commands)] * commands$depth[nrow(commands)]
     scale_colour_manual(values = c(NA, "#ff0000")) +
     scale_fill_manual(values = c(NA, "#9a2222")) +
     scale_shape_manual(values = c(NA, 21)) +
-    labs(x = "horizontal") +
+    labs(x = "forward move no") +
     theme_classic() +
     theme(
       panel.background = element_rect(fill = NA, colour = NA, size = 1),
@@ -108,6 +108,7 @@ commands$cumsum[nrow(commands)] * commands$depth[nrow(commands)]
       strip.background = element_rect(fill = NA, colour = NA),
       strip.text = element_text(size = 16, colour = "#00ad2b"),
       axis.text = element_text(size = 12, colour = "white"),
+      axis.title = element_text(size = 14, colour = "white"),
       axis.line = element_line(colour = "white", size = 1),
       legend.position = "none"
     ) 
