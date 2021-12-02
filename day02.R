@@ -74,37 +74,41 @@ commands$cumsum[nrow(commands)] * commands$depth[nrow(commands)]
 
 ## BONUS ##
 # Plot the position of the submarine - in a submarine radar-style
-commands %>% 
-  select(cumsum, depth) %>% 
-  mutate(command_no = row_number()) %>% 
-  pivot_longer(
-    cumsum:depth,
-    names_to = "dimension",
-    values_to = "value"
-  ) %>% 
-  mutate(
-    dimension = ifelse(dimension == "cumsum", "horizontal", dimension),
-    last_datapoint = ifelse(command_no == max(command_no), TRUE, FALSE)
-  ) %>% 
-  ggplot(aes(x = command_no, y = value)) +
-  geom_path(colour = "#00ad2b", size = 2) +
-  geom_point(
-    aes(colour = last_datapoint, fill = last_datapoint, shape = last_datapoint),
-    size = 5, stroke = 3
-  ) +
-  facet_wrap(~dimension, nrow = 2, scales = "free") +
-  scale_colour_manual(values = c(NA, "#ff0000")) +
-  scale_fill_manual(values = c(NA, "#9a2222")) +
-  scale_shape_manual(values = c(NA, 21)) +
-  labs(x = "horizontal") +
-  theme_classic() +
-  theme(
-    panel.background = element_rect(fill = NA, colour = "white", size = 1),
-    panel.grid.major = element_line(colour = "#00ad2b"),
-    plot.background = element_rect(fill = "black"),
-    strip.background = element_rect(fill = NA),
-    strip.text = element_text(size = 16, colour = "#00ad2b"),
-    axis.text = element_text(size = 12, colour = "white"),
-    axis.line = element_line(colour = "white", size = 1),
-    legend.position = "none"
-  )
+(
+  radar_plot <- 
+    commands %>% 
+    select(cumsum, depth) %>% 
+    mutate(command_no = row_number()) %>% 
+    pivot_longer(
+      cumsum:depth,
+      names_to = "dimension",
+      values_to = "value"
+    ) %>% 
+    mutate(
+      dimension = ifelse(dimension == "cumsum", "horizontal", dimension),
+      last_datapoint = ifelse(command_no == max(command_no), TRUE, FALSE)
+    ) %>% 
+    ggplot(aes(x = command_no, y = value)) +
+    geom_path(colour = "#00ad2b", size = 2) +
+    geom_point(
+      aes(colour = last_datapoint, fill = last_datapoint, shape = last_datapoint),
+      size = 5, stroke = 3
+    ) +
+    facet_wrap(~dimension, nrow = 2, scales = "free") +
+    scale_y_continuous(expand = expansion(mult = c(0, .2))) +
+    scale_colour_manual(values = c(NA, "#ff0000")) +
+    scale_fill_manual(values = c(NA, "#9a2222")) +
+    scale_shape_manual(values = c(NA, 21)) +
+    labs(x = "horizontal") +
+    theme_classic() +
+    theme(
+      panel.background = element_rect(fill = NA, colour = "white", size = 1),
+      panel.grid.major = element_line(colour = "#00ad2b"),
+      plot.background = element_rect(fill = "black"),
+      strip.background = element_rect(fill = NA),
+      strip.text = element_text(size = 16, colour = "#00ad2b"),
+      axis.text = element_text(size = 12, colour = "white"),
+      axis.line = element_line(colour = "white", size = 1),
+      legend.position = "none"
+    ) 
+)
