@@ -58,3 +58,29 @@ coordinate_table <-
   count()
 
 sum(table(coordinate_table$n)[-1])
+
+## PART 2 ##
+# Also consider diagonal lines (which are luckily 45 degrees)
+diagonal <- 
+  day5 %>% 
+  filter(x1 != x2 & y1 != y2)
+
+for (i_row in 1:nrow(diagonal)) {
+  xs <- diagonal$x1[i_row]:diagonal$x2[i_row]
+  ys <- diagonal$y1[i_row]:diagonal$y2[i_row]
+  
+  to_add <- data.frame(
+    y = ys,
+    x = xs
+  )
+  covered <- rbind.data.frame(covered, to_add)
+}
+
+# How often is each position covered?
+coordinate_table <- 
+  covered %>% 
+  unite("coordinate", x:y, sep = "-") %>% 
+  group_by(coordinate) %>% 
+  count()
+
+sum(table(coordinate_table$n)[-1])
