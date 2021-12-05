@@ -40,7 +40,7 @@ vent_plot <-
   theme(
     panel.background = element_rect(fill = NA, colour = NA, size = 1),
     panel.grid.major = element_line(colour = "#005a5f"),
-    plot.background = element_rect(fill = "#00152e", colour = "white"),
+    plot.background = element_rect(fill = "#0c1017", colour = "#0c1017"),
     axis.text = element_text(size = 12, colour = "white"),
     axis.title = element_text(size = 14, colour = "white"),
     axis.line = element_line(colour = "white", size = 1),
