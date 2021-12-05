@@ -6,6 +6,7 @@ output: github_document
 
 ```{r setup, include = FALSE}
 source("day02.R")
+source("day05_plot_only.R")
 
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
@@ -16,4 +17,11 @@ Here is a little "radar plot" for the submarine on day 2.
 
 ```{r, out.width='90%'}
 radar_plot
+```
+
+For day 5, I plotted the hydrothermal vents.
+The colour scheme was inspired by the first picture in the [Wikipedia article](https://en.wikipedia.org/wiki/Hydrothermal_vent#/media/File:Champagne_vent_white_smokers.jpg), and I used the package [ggecho](https://coolbutuseless.github.io/2019/03/22/ggecho-an-experimental-ggplot-stat-for-blurring-elements/) to blurr the lines of the plot, because I thought that this is what represents the smoke of the vents best.
+
+```{r, out.width='90%'}
+vent_plot
 ```
