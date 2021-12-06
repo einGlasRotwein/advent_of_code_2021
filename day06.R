@@ -37,8 +37,6 @@ names(fish_per_state) <- 0:8
 
 # Transfer fish that we initially have
 fish_per_state[names(fish_per_state) %in% names(table(day6))] <- table(day6)
-# fish_per_state[names(fish_per_state) %in% names(table(c(3,4,3,1,2)))] <- 
-#   table(c(3,4,3,1,2))
 
 days <- 256
 
