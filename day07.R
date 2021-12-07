@@ -38,7 +38,6 @@ for (i in seq_along(fuel_costs)) {
 }
 
 min(fuel_costs)
-# 100220528
 
 # Note: I thought we can just use the mean as ideal position, because
 # taking the mean (an intercept-only regression) will minimise the squared
