@@ -1,8 +1,6 @@
 
 ## READ IN DATA AND FUNCTIONS --------------------------------------------------
 
-rm(list = ls())
-
 source("day11_functions.R")
 
 day11 <- readLines("inputs/input11.txt")
