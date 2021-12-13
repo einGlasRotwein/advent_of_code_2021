@@ -16,3 +16,7 @@ to blurr the lines of the plot, because I thought that this is what
 represents the smoke of the vents best.
 
 <img src="README_files/figure-gfm/unnamed-chunk-2-1.png" width="90%" />
+
+Here is the “plot” for the origami of day 13:
+
+<img src="README_files/figure-gfm/unnamed-chunk-3-1.png" width="90%" />

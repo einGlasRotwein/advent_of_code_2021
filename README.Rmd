@@ -7,6 +7,7 @@ output: github_document
 ```{r setup, include = FALSE}
 source("day02.R")
 source("day05_plot_only.R")
+source("day13.R")
 
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
@@ -24,4 +25,10 @@ The colour scheme was inspired by the first picture in the [Wikipedia article](h
 
 ```{r, out.width='90%'}
 vent_plot
+```
+
+Here is the "plot" for the origami of day 13:
+
+```{r, out.width='90%'}
+folded_plot
 ```
