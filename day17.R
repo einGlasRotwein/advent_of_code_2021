@@ -83,7 +83,6 @@ for (i in 1:nrow(positions)) {
   highest_y <- NA
   y_cap <- 100
   
-  # TO DO: CHANGE! DON'T STOP AT FIRST VALID VALUE, BUT COUNT VALID VALUES!
   # Move until a valid position is found or y_cap is reached
   while(y < y_cap) {
     highest_y <- c(highest_y, move_probe(x, y, xmin, xmax, ymin, ymax))
