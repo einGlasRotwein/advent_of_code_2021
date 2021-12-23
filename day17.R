@@ -61,8 +61,6 @@ for (i in 1:nrow(positions)) {
     y <- y + 1
   }
   
-  # if (y >= y_cap) next
-  
   if (!all(is.na(highest_y))) {
     positions$highest_y[i] <- max(highest_y, na.rm = TRUE)
     positions$y[i] <- which(highest_y == max(highest_y, na.rm = TRUE)) - 1
@@ -71,3 +69,30 @@ for (i in 1:nrow(positions)) {
 
 positions[!is.na(positions$highest_y), ]
 max(positions$highest_y, na.rm = TRUE)
+
+## PART 2 ----------------------------------------------------------------------
+
+# How many initial values meet the target?
+
+positions <- data.frame(x = 1:xmax, sum_trajectories = NA)
+
+# Optimise y-values for each x value we found
+for (i in 1:nrow(positions)) {
+  x <- positions$x[i]
+  y <- -100
+  highest_y <- NA
+  y_cap <- 100
+  
+  # TO DO: CHANGE! DON'T STOP AT FIRST VALID VALUE, BUT COUNT VALID VALUES!
+  # Move until a valid position is found or y_cap is reached
+  while(y < y_cap) {
+    highest_y <- c(highest_y, move_probe(x, y, xmin, xmax, ymin, ymax))
+    y <- y + 1
+  }
+  
+  if (!all(is.na(highest_y))) {
+    positions$sum_trajectories[i] <- length(highest_y[!is.na(highest_y)])
+  }
+}
+
+sum(positions[!is.na(positions$sum_trajectories), ]$sum_trajectories)
